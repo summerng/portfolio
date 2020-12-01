@@ -23,6 +23,27 @@ p{
     padding: 0 30px;
   }
 
+figcaption{
+    font-size: .75em;
+    text-align: center;
+}
+
+  .skip a{
+    background: white;
+    left: 0;
+    padding: 5px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+    position: absolute;
+    margin-top: -40px;
+  }
+  
+  .skip a:focus {
+    top: 0px;
+    margin: auto;
+  }
+
 *:focus{
     border: 2px solid black;
   }
@@ -38,8 +59,7 @@ footer{
 #intro-image{
     display: block;
     margin: auto;
-    min-width: 50%;
-    max-width: 100%;
+    max-width: 90%;
 }
 
 /*logo*/
@@ -51,7 +71,7 @@ footer{
 /*header*/
 .grid-container-layout{
     display: grid;
-    grid-template-rows: 1fr 5fr;
+    /*grid-template-rows: 1fr 5fr;*/
 }
 
 .grid-header{
@@ -67,8 +87,20 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f9e076;
-  }
+    background-color: #fada5e;
+    animation: pulse 3s 1;
+
+}
+
+    
+@keyframes pulse{
+    0%{
+        background-color: #c49102;
+    }
+    100%{
+        background-color: #fada5e;
+    }
+}
 
 .nav_links{
     list-style: none;
@@ -113,7 +145,9 @@ header{
 
 video{
     display: block;
-    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
 }
 
 .flexbox{
@@ -127,6 +161,62 @@ video{
     flex: none;
     min-width: 20%;
     max-width: 50%;
+}
+
+.parallax{
+    margin-top: 10px;
+    background-image: url("../images/zines.jpg");
+    min-height: 200px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.flip-card{
+    background-color: transparent;
+    min-width: 50px;
+    max-width: 600px;
+    height: 200px;
+    perspective: 1000px;
+    margin: auto;
+}
+.flip-card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner,
+.flip-card:active .flip-card-inner,
+.flip-card:focus .flip-card-inner{
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front{
+    display: flex;
+    background-color: #c49102;
+    color: black;
+    font-size: 2em;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-back{
+    background-color: #fada5e;
+    color: black;
+    transform: rotateY(180deg);
 }
 
 @media screen and (min-width: 850px){
@@ -156,8 +246,18 @@ video{
         display:flex;
         justify-content: center;
         align-items: center;
+        animation: pulse 3s 1;
       }
     
+      @keyframes pulse{
+          0%{
+              background-color: #c49102;
+          }
+          100%{
+              background-color: #fada5e;
+          }
+      }
+
     #logo{
         /*fix to match above*/
         min-width: 10vw;
@@ -193,7 +293,7 @@ video{
 
     video{
         padding-top: 20px;
-        padding-bottom: 40px;
+        padding-bottom: 10px;
         min-width: 200px;
         max-width: 90%;
     }
@@ -213,6 +313,9 @@ video{
     .flex-comics{
         flex: none;
         max-width: 30%;
+    }
+    .parallax{
+        min-height: 400px;
     }
 }
 
