@@ -18,7 +18,7 @@
     </script>
 </head>
 <body>
-    <div class="skip"><a href="#main">Skip to Main Content</a></div>
+    <div class="skip"><a href="#skip">Skip to Main Content</a></div>
     <div class="grid-container-layout">
     <header class="grid-header">
         <img src="images/logo.png" alt="logo" id = "logo">
@@ -31,20 +31,26 @@
           </ul>
       </nav>
     </header>
-<main class="grid-main"> 
+<main class="grid-main" id="skip"> 
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <h1>Amazing Comic Artists</h1>
+    <img width="600" src="images/artists.png" alt="Rainbow over two hands. In the middle, it says 'Amazing artists.'" id="intro-image">
     <p>Thanks to the Internet, there are so many possibilities for comic artists to connect with one another and share their work. 
         Over time, I’ve come across a number of comic artists that I look up to and admire. 
         These are just a few. </p>
 
+    <!--
     <ul>
         <li><a href="#christine">Christine Mari</a></li>
         <li><a href="#shen">Shen Comix</a></li>
         <li><a href="#alison">Alison Zai</a></li>
     </ul>
-    
+    //-->
+
     <!--make transitions smoother-->
-    <h2 id="christine">Christine Mari</h2>
+    <button type="button" class="collapsible">Christine Mari</button>
+    <div class="content">
+    <h2 id="christine"><a href="https://christinemari.com/" target="_blank">Christine Mari</a></h2>
     <p>Christine Mari is an auto-biographical comic artist.
          Her comics revolve around what it’s like being in your 20s in Japan. 
          When she was 17, she self-published her first graphic novel, Halfway Home: Drawing My Way Through Japan. 
@@ -57,9 +63,11 @@
             <img src="images/christine2.jpeg" alt="A panel from one of Christine's comics." class="flex-comics">
             <img src="images/christine3.jpeg" alt="A panel from one of Christine's comics." class="flex-comics">
         </div>
+    </div>
 
-
-    <h2 id="shen">Shen Comix</h2>
+    <button type="button" class="collapsible">Shen Comix</button>
+    <div class="content">
+    <h2 id="shen"><a href="https://www.instagram.com/shencomix/" target="_blank">Shen Comix</a></h2>
     <p>Shen is one of the most popular comic artists on the internet. 
         His comics are humorous, fun, and overwhelmingly enjoyable. 
         If you ever find yourself down, I recommend checking out his work. 
@@ -69,9 +77,11 @@
             <img src="images/shen2.jpeg" alt="A comic about an evil scientist and his cozification machine." class="flex-comics">
             <img src="images/shen3.png" alt="A comic about seasons in New England." class="flex-comics">
         </div>
+    </div>
 
-
-    <h2 id="alison">Alison Zai</h2>
+    <button type="button" class="collapsible">Alison Zai</button>
+    <div class="content">
+    <h2 id="alison"><a href="https://www.instagram.com/alisonzai/" target="_blank">Alison Zai</a></h2>
     <p>Calling Alison Zai’s comics humorous is an understatement. 
         Her art tackles many themes in a direct, honest and funny way: love, relationships, work, sadness… the list goes on. 
         Her use of vibrant colors and unique characters makes her comics seem otherworldly, but the irony lies in the fact that her work is so easy to relate to. 
@@ -83,7 +93,41 @@
             <img src="images/alison2.jpeg" alt="A comic about knowing your soulmate." class="flex-comics">
             <img src="images/alison3.jpeg" alt="A comic about things being okay." class="flex-comics">
         </div>
+    </div>
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
 
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+
+            var mybutton = document.getElementById("myBtn");
+            
+        
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+              if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+                mybutton.style.display = "block";
+              } else {
+                mybutton.style.display = "none";
+              }
+            }
+            
+            function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+            </script>
     </main>
 </div>
     <footer>

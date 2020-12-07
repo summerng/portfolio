@@ -18,7 +18,7 @@
         </script>
 </head>
 <body>
-    <div class="skip"><a href="#main">Skip to Main Content</a></div>
+    <div class="skip"><a href="#skip">Skip to Main Content</a></div>
     <div class="grid-container-layout">
     <header class="grid-header">
         <img src="images/logo.png" alt="logo" id = "logo">
@@ -31,8 +31,8 @@
           </ul>
       </nav>
     </header>
-<main class="grid-main"> 
-    
+<main class="grid-main" id="skip"> 
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <h1>A Basic Introduction to Sequential Art & Comics</h1>
 
     <div class="grid-container">
@@ -79,7 +79,26 @@
      I hope to provide a peek into the world of comics, so that you can start reading or making your own!</p>
     
      <img width="600" src="images/intro.jpg" alt="Illustration with caption: Hope you enjoy!" id="intro-image">
-</main>
+     <script>
+        var mybutton = document.getElementById("myBtn");
+        
+    
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
+    </main>
 </div>
 <footer>
     <p> &copy; Summer Nguyen 2020</p>

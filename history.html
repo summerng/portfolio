@@ -18,7 +18,7 @@
     </script>
 </head>
 <body>
-    <div class="skip"><a href="#main">Skip to Main Content</a></div>
+    <div class="skip"><a href="#skip">Skip to Main Content</a></div>
     <div class="grid-container-layout">
     <header class="grid-header">
         <img src="images/logo.png" alt="logo" id = "logo">
@@ -31,7 +31,8 @@
           </ul>
       </nav>
     </header>
-<main class="grid-main main"> 
+<main class="grid-main" id="skip"> 
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <h1>History of Sequential Art & Comics</h1>
 
     <div class= "parallax"></div>
@@ -46,7 +47,7 @@
                 </div>
                     <div class="flip-card-back">
                         <p>"Images or pictures in a deliberate sequence (2 or more), which are intended to convey information or aesthetic value to the viewer."</p>
-                        <a href="https://en.wikipedia.org/wiki/Sequential_art">Wikipedia</a>
+                        <a href="https://en.wikipedia.org/wiki/Sequential_art" target="_blank">Wikipedia</a>
                     </div>
                 </div>
             </div>
@@ -65,6 +66,25 @@
         The malleability of comics allows for endless innovation and creation, so what are you waiting for? 
         Go out there and create your first comic today!</p>
     <p><i>All of this information was sourced from </i> Understanding Comics <i>by Scott McCloud.</i></p>
+    <script>
+        var mybutton = document.getElementById("myBtn");
+        
+    
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
 </main>
 </div>
 <footer>

@@ -18,7 +18,7 @@
     </script>
 </head>
 <body>
-    <div class="skip"><a href="#main">Skip to Main Content</a></div>
+    <div class="skip"><a href="#skip">Skip to Main Content</a></div>
     <div class="grid-container-layout">
     <header class="grid-header">
         <img src="images/logo.png" alt="logo" id = "logo">
@@ -31,16 +31,24 @@
           </ul>
       </nav>
     </header>
-<main class="grid-main"> 
+<main class="grid-main" id="skip"> 
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <h1>Possibilities of Comic Art</h1>
-
+<!--
     <ul>
         <li><a href="#zines">Creating Zines</a></li>
         <li><a href="#publication">Publication Features</a></li>
         <li><a href="#storyboarding">Storyboarding</a></li>
         <li><a href="#collab">Collaboration</a></li>
-    </ul>
+    </ul>-->
+    <img width="600" src="images/opps.png" alt="An assortment of comic art opportunities are displayed: zine, magazine, storyboard panels, and two people ideating." id="intro-image">
+    <p>There are many things you can do as a comic artist. 
+        These are only a few examples of hobbies (and jobs!) you can take on through comics.
+        Check out the Collaboration collapsible if you want to work together, or if you have more questions!
+    </p>
 
+    <button type="button" class="collapsible">Creating Zines</button>
+    <div class="content">
     <h2 id="zines">Creating Zines</h2>
     <p>Zines (pronounced “zeens”) are self-published printed or hand-assembled booklets. 
         Zines are a niche art form, but the small community of zinesters is strong! 
@@ -49,7 +57,10 @@
         <p>Zines are one way of displaying comics in physical form. 
         Many artists choose to swap zines at zine or art fairs. 
         If you’re looking for a cool way to share your comics, I would suggest looking into zines!</p>
+    </div>
 
+    <button type="button" class="collapsible">Publication Features</button>
+    <div class="content">
     <h2 id="publication">Publication Features</h2>
     <p>Publications often include illustrations, cartoons, and/or comics in their issues, with the New Yorker being one of the more famous ones. 
         There are a team of cartoonists who work for the New Yorker who are purely dedicated to creating cartoons and comics! 
@@ -58,7 +69,10 @@
         That being said, many cartoonists and artists still get to be featured on the New Yorker’s Daily Shouts page online.</p>
         <p>Something that’s worth mentioning is that these cartoonists and comic artists are quite different from the lives of comic book artists, who illustrate full-length issues that can develop into complex stories over time. 
         Because the editorial world moves so fast, these artists mostly create snappy, quick, and fun pieces that are meant to be digested quickly.</p>
+    </div>
 
+    <button type="button" class="collapsible">Storyboarding</button>
+    <div class="content">
     <h2 id="storyboarding">Storyboarding</h2>
     <p>Storyboarding is the process of laying out sequential illustrations or images to help visualize moving pictures, such as an animation, a television show, or a movie. 
         Like comic art, storyboarding is a form of sequential art. 
@@ -66,7 +80,10 @@
         However, storyboard artists must consider things such as camera angles, timing, or how many shots a scene will take, whereas a comic artist does not. 
         Despite the differences, there are storyboard artists out there that are also comic artists. 
         If you’re interested in working in the animation industry and you love storytelling, storyboarding is definitely a career you should look into!</p>
+        </div>
 
+        <button type="button" class="collapsible">Collaboration</button>
+    <div class="content">
     <h2 id="collab">Collaboration</h2>
     <p>One of the best things about being an artist is the ability to collaborate and make art with others!
         If you're interested in collabing, or have any questions about any of the content on this site, feel free to contact me below!</p>
@@ -94,6 +111,42 @@
           
               <input type="submit" value="submit">
             </fieldset>
+            </form>
+            </div>
+
+            <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+                var mybutton = document.getElementById("myBtn");
+                
+            
+                window.onscroll = function() {scrollFunction()};
+                
+                function scrollFunction() {
+                  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+                    mybutton.style.display = "block";
+                  } else {
+                    mybutton.style.display = "none";
+                  }
+                }
+                
+                function topFunction() {
+                  document.body.scrollTop = 0;
+                  document.documentElement.scrollTop = 0;
+                }
+                </script>
     </main>
     </div>
     <footer>
