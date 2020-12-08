@@ -22,6 +22,7 @@
     <div class="grid-container-layout">
     <header class="grid-header">
         <img src="images/logo.png" alt="logo" id = "logo">
+        <!--nav for mobile-->
         <nav>
           <ul class="nav_links">
             <li class="nav_item selected"><a href="index.html">Intro</a></li>
@@ -80,6 +81,16 @@
     
      <img width="600" src="images/intro.jpg" alt="Illustration with caption: Hope you enjoy!" id="intro-image">
      <script>
+
+        function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+        }
+        
         var mybutton = document.getElementById("myBtn");
         
     
